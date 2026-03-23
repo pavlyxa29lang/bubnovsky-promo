@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Продвижение Центров доктора Бубновского</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --primary: #0A7B6F;
+  --primary-light: #0EA391;
+  --primary-dark: #065C53;
+  --accent: #E8F5F3;
+  --accent2: #F0FAF8;
+  --dark: #1A2332;
+  --text: #2D3748;
+  --text-light: #64748B;
+  --white: #FFFFFF;
+  --border: #E2E8F0;
+  --gradient: linear-gradient(135deg, #0A7B6F 0%, #0EA391 50%, #14B8A6 100%);
+  --gradient2: linear-gradient(135deg, #065C53 0%, #0A7B6F 100%);
+  --red: #E53E3E;
+  --shadow: 0 4px 20px rgba(10, 123, 111, 0.12);
+  --shadow-lg: 0 8px 40px rgba(10, 123, 111, 0.18);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  background: #F7FAFA;
+  line-height: 1.7;
+}
+
+/* ===== DESKTOP: Slide mode ===== */
+@media (min-width: 1025px) {
+  body { overflow: hidden; height: 100vh; background: #0f1117; }
+  .slide {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    padding: 50px 70px;
+    background: var(--white);
+    position: relative;
+    overflow-y: auto;
+  }
+  .slide.active { display: flex; flex-direction: column; }
+  .nav {
+    position: fixed;
+    bottom: 24px;
+    right: 30px;
+    z-index: 100;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .nav button {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    background: var(--white);
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 16px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+  }
+  .nav button:hover { background: var(--primary); color: var(--white); }
+  .nav .counter { font-size: 13px; color: var(--text-light); font-weight: 500; min-width: 50px; text-align: center; }
+}
+
+/* ===== MOBILE: Scroll mode ===== */
+@media (max-width: 1024px) {
+  .slide { display: block !important; padding: 32px 20px; border-bottom: 3px solid var(--primary); }
+  .nav { display: none; }
+  .slide-title { min-height: 100vh; min-height: 100dvh; }
+}
+
+/* ===== TITLE SLIDE ===== */
+.slide-title {
+  background: var(--gradient);
+  color: var(--white);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.slide-title::before {
+  content: '';
+  position: absolute;
+  top: -30%; right: -15%;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+.slide-title::after {
+  content: '';
+  position: absolute;
+  bottom: -20%; left: -10%;
+  width: 350px; height: 350px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
+.title-content { position: relative; z-index: 1; max-width: 850px; margin: 0 auto; }
+.slide-title h1 {
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -1.5px;
+}
+.slide-title .subtitle {
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 300;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+.slide-title .divider {
+  width: 80px; height: 3px;
+  background: rgba(255,255,255,0.4);
+  margin: 24px auto;
+  border-radius: 2px;
+}
+.slide-title .date {
+  font-size: 16px;
+  opacity: 0.6;
+  margin-top: 30px;
+  font-weight: 400;
+}
+
+/* ===== CONTENT SLIDES ===== */
+.slide-content {
+  position: relative;
+  background-color: #FBFEFE;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg opacity='0.04' fill='%230A7B6F'%3E%3Crect x='30' y='18' width='8' height='24' rx='2'/%3E%3Crect x='22' y='26' width='24' height='8' rx='2'/%3E%3C/g%3E%3Cpath d='M195 35c-3-7-12-9-17-4s-5 13 0 18l17 15 17-15c5-5 5-13 0-18s-14-3-17 4z' opacity='0.035' fill='%230A7B6F'/%3E%3Cpath d='M310 40 h12 l4-12 6 24 6-24 4 12 h12' stroke='%230A7B6F' stroke-width='2' fill='none' opacity='0.05'/%3E%3Cg opacity='0.03' fill='%230A7B6F'%3E%3Crect x='88' y='108' width='6' height='20' rx='2'/%3E%3Crect x='81' y='115' width='20' height='6' rx='2'/%3E%3C/g%3E%3Ccircle cx='250' cy='120' r='12' stroke='%230A7B6F' stroke-width='2' fill='none' opacity='0.04'/%3E%3Ccircle cx='250' cy='120' r='4' fill='%230A7B6F' opacity='0.04'/%3E%3Cpath d='M250 108 C250 90 270 90 270 108' stroke='%230A7B6F' stroke-width='2' fill='none' opacity='0.04'/%3E%3Cpath d='M360 100c0 10 12 10 12 20s-12 10-12 20 12 10 12 20' stroke='%230A7B6F' stroke-width='1.5' fill='none' opacity='0.04'/%3E%3Cpath d='M372 100c0 10-12 10-12 20s12 10 12 20-12 10-12 20' stroke='%230A7B6F' stroke-width='1.5' fill='none' opacity='0.04'/%3E%3Cpath d='M45 205c-2-5-9-7-13-3s-4 10 0 14l13 11 13-11c4-4 4-10 0-14s-11-2-13 3z' opacity='0.03' fill='%230A7B6F'/%3E%3Crect x='155' y='195' width='30' height='14' rx='7' stroke='%230A7B6F' stroke-width='1.5' fill='none' opacity='0.04' transform='rotate(-30 170 202)'/%3E%3Cg opacity='0.04' fill='%230A7B6F'%3E%3Crect x='290' y='215' width='8' height='24' rx='2'/%3E%3Crect x='282' y='223' width='24' height='8' rx='2'/%3E%3C/g%3E%3Cpath d='M20 310 h10 l3-10 5 20 5-20 3 10 h10' stroke='%230A7B6F' stroke-width='1.5' fill='none' opacity='0.04'/%3E%3Cpath d='M140 295 L140 325 Q140 340 155 345 Q170 340 170 325 L170 295 Z' stroke='%230A7B6F' stroke-width='1.5' fill='none' opacity='0.035'/%3E%3Cg opacity='0.035' fill='%230A7B6F'%3E%3Crect x='152' y='305' width='6' height='18' rx='1'/%3E%3Crect x='146' y='311' width='18' height='6' rx='1'/%3E%3C/g%3E%3Crect x='280' y='300' width='8' height='30' rx='4' stroke='%230A7B6F' stroke-width='1.5' fill='none' opacity='0.035'/%3E%3Ccircle cx='284' cy='335' r='6' stroke='%230A7B6F' stroke-width='1.5' fill='none' opacity='0.035'/%3E%3Cpath d='M370 320c-2-5-9-7-13-3s-4 10 0 14l13 11 13-11c4-4 4-10 0-14s-11-2-13 3z' opacity='0.04' fill='%230A7B6F'/%3E%3C/svg%3E");
+}
+.slide-content::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: var(--gradient);
+  z-index: 1;
+}
+.slide-content::after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 250px; height: 250px;
+  background: radial-gradient(circle at bottom right, rgba(10, 123, 111, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.slide-header { margin-bottom: 24px; padding-top: 10px; }
+.slide-header .tag {
+  display: inline-block;
+  background: var(--gradient);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.slide-header h2 {
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+.slide-header .lead {
+  font-size: 17px;
+  color: var(--text-light);
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+.slide-body { flex: 1; }
+.slide-body p { font-size: 16px; line-height: 1.8; color: var(--text); margin-bottom: 14px; }
+
+/* ===== LISTS ===== */
+.list-items { display: flex; flex-direction: column; gap: 10px; margin: 14px 0; }
+.list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.list-item .bullet {
+  flex-shrink: 0;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  margin-top: 9px;
+}
+.list-item .check {
+  flex-shrink: 0;
+  color: var(--primary);
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 1px;
+}
+.list-item .num {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--gradient);
+  color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700;
+  margin-top: 2px;
+}
+
+/* ===== CARDS ===== */
+.cards { display: grid; gap: 14px; margin: 16px 0; }
+.cards-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.cards-3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+.card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gradient);
+}
+.card h3 { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+.card p { font-size: 14px !important; line-height: 1.6 !important; color: var(--text-light) !important; }
+
+.card-highlight {
+  background: var(--accent);
+  border: 2px solid var(--primary);
+}
+
+/* ===== CALLOUT ===== */
+.callout {
+  padding: 18px 22px;
+  border-radius: 14px;
+  margin: 14px 0;
+}
+.callout-primary {
+  background: var(--accent);
+  border-left: 4px solid var(--primary);
+}
+.callout-primary p { color: var(--primary-dark) !important; font-weight: 500; }
+.callout-warning {
+  background: #FFF5F5;
+  border-left: 4px solid var(--red);
+}
+.callout-warning p { color: #742A2A !important; }
+.callout-warm {
+  background: #FFFAF0;
+  border-left: 4px solid #ED8936;
+}
+.callout-warm p { color: #744210 !important; }
+.callout-blue {
+  background: #EBF8FF;
+  border-left: 4px solid #3182CE;
+}
+.callout-blue p { color: #2A4365 !important; }
+
+/* ===== TWO COLUMNS ===== */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+@media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+@media (max-width: 1024px) { .ux-grid { grid-template-columns: 1fr !important; } }
+.col-section h3 {
+  font-size: 18px; font-weight: 700; color: var(--dark);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+}
+
+/* ===== TABLES ===== */
+.price-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 15px; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
+.price-table th {
+  text-align: left;
+  padding: 14px 18px;
+  background: var(--gradient);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.price-table th:last-child { text-align: right; }
+.price-table td { padding: 13px 18px; border-bottom: 1px solid var(--border); background: var(--white); }
+.price-table td:last-child { text-align: right; font-weight: 600; color: var(--primary-dark); white-space: nowrap; }
+.price-table tr:nth-child(even) td { background: var(--accent2); }
+.price-table tr.total td { background: var(--accent) !important; font-weight: 700; color: var(--dark); font-size: 16px; border-bottom: none; }
+.price-table tr.total td:last-child { color: var(--primary); font-size: 17px; }
+
+/* ===== ROADMAP ===== */
+.roadmap { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 16px 0; }
+.roadmap-item {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 22px;
+  border-top: 4px solid var(--primary);
+  box-shadow: var(--shadow);
+}
+.roadmap-item h4 { font-size: 15px; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
+.roadmap-item ul { list-style: none; font-size: 14px; line-height: 1.8; }
+.roadmap-item ul li { padding-left: 18px; position: relative; }
+.roadmap-item ul li::before { content: '→'; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+
+/* ===== GUARANTEE ===== */
+.guarantee-box {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 26px;
+  border-left: 5px solid var(--primary);
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+}
+.guarantee-box p { font-size: 16px !important; margin-bottom: 12px; line-height: 1.7; }
+
+/* ===== STEPS ===== */
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin: 16px 0; }
+.step {
+  text-align: center;
+  padding: 24px 16px;
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.step .step-num {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--gradient);
+  color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 800;
+  margin: 0 auto 12px;
+}
+.step h4 { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+.step p { font-size: 13px !important; color: var(--text-light) !important; line-height: 1.5 !important; }
+
+/* ===== SCREENSHOT ===== */
+.screenshot-container {
+  margin: 16px 0;
+  text-align: center;
+}
+.screenshot-container img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--border);
+}
+.screenshot-caption {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* ===== IMPORTANT BLOCK ===== */
+.important-block {
+  background: var(--accent);
+  border: 2px solid var(--primary);
+  border-radius: 16px;
+  padding: 22px 26px;
+  margin: 16px 0;
+}
+.important-block p { color: var(--primary-dark) !important; font-weight: 600; font-size: 16px !important; }
+
+/* ===== PRINT ===== */
+@media print {
+  body { overflow: visible; background: white; }
+  .slide { display: block !important; page-break-after: always; }
+  .nav { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: TITLE -->
+<div class="slide slide-title active" id="slide-1">
+  <div class="title-content">
+    <h1>Комплексное продвижение<br>Центров доктора Бубновского</h1>
+    <div class="divider"></div>
+    <p class="subtitle">Аудит сайта. Переработка. Маркетинг. Яндекс.Директ.</p>
+    <p class="date">Март 2026</p>
+  </div>
+</div>
+
+<!-- SLIDE 2: SITUATION -->
+<div class="slide slide-content" id="slide-2">
+  <div class="slide-header">
+    <div class="tag">Текущая ситуация</div>
+    <h2>Что сейчас происходит</h2>
+  </div>
+  <div class="slide-body">
+    <p>За последний год количество первичных пациентов сократилось почти вдвое. При этом:</p>
+    <div class="list-items">
+      <div class="list-item"><span class="bullet"></span><span>Сайт не всегда появляется в первых строках поисковой выдачи — потенциальные пациенты вас просто не находят</span></div>
+      <div class="list-item"><span class="bullet"></span><span>Сайт перегружен информацией, но при этом не доводит посетителя до записи — он скорее информирует, чем продаёт</span></div>
+      <div class="list-item"><span class="bullet"></span><span>Нет выделенного маркетолога — продвижением занимаетесь сами, а подрядчики на аутсорсе не погружаются в вашу специфику</span></div>
+      <div class="list-item"><span class="bullet"></span><span>Нет системной работы с рекламой, контентом и аналитикой — каждый элемент существует сам по себе</span></div>
+    </div>
+    <div class="callout callout-warning" style="margin-top: 20px;">
+      <p>Результат: клиника теряет пациентов, которые уходят к конкурентам, потому что находят их первыми.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: AUDIT -->
+<div class="slide slide-content" id="slide-3">
+  <div class="slide-header">
+    <div class="tag">Аудит</div>
+    <h2>Что мы увидели на bubnovsky-vip.ru</h2>
+    <p class="lead">Поверхностный анализ сайта — моменты, которые влияют на конверсию и позиции в поиске</p>
+  </div>
+  <div class="slide-body">
+    <div class="list-items">
+      <div class="list-item"><span class="num">1</span><span><strong>Кнопка «Записаться на консультацию» работает неудобно</strong> — при нажатии страница прокручивается вниз к форме. Правильнее — всплывающее окно с формой записи, чтобы пациент мог записаться в один клик из любого места на сайте.</span></div>
+      <div class="list-item"><span class="num">2</span><span><strong>Акции на главной странице не продают</strong> — например, «День открытых дверей» — не все посетители понимают, что это и зачем приходить. Не у всех акций есть чёткий призыв к действию и кнопка «Записаться». Акции стоит проработать.</span></div>
+      <div class="list-item"><span class="num">3</span><span><strong>Нет блога и полезных статей</strong> — сайт не привлекает органический трафик из поиска. Люди ищут «боль в пояснице что делать» — и находят конкурентов. Вашего сайта в этих результатах нет.</span></div>
+      <div class="list-item"><span class="num">4</span><span><strong>Страница специалистов требует доработки</strong> — врачи перечислены, но не хватает подробных квалификаций и описаний. Пациент хочет понимать, какой у врача опыт и в чём его сильная сторона.</span></div>
+      <div class="list-item"><span class="num">5</span><span><strong>У направления «Термо и криотерапия» нет кнопки «Подробнее»</strong> — в отличие от других направлений физиотерапии. Пациент не может узнать подробности.</span></div>
+      <div class="list-item"><span class="num">6</span><span><strong>Нет раздела FAQ</strong> — частые вопросы пациентов не отработаны на сайте. Это потеря трафика из поиска и лишняя нагрузка на колл-центр.</span></div>
+      <div class="list-item"><span class="num">7</span><span><strong>Title главной страницы</strong> — акцент на скидках вместо позиционирования клиники и метода Бубновского. Title — это первое, что видит человек в поисковой выдаче.</span></div>
+      <div class="list-item"><span class="num">8</span><span><strong>Нет разметки Schema.org для врачей</strong> — специальный код, который помогает Яндексу показывать информацию о ваших специалистах прямо в поисковой выдаче (имя, специальность, клиника). Без неё ваши врачи не отображаются в расширенных карточках поиска.</span></div>
+      <div class="list-item"><span class="num">9</span><span><strong>Сайт не адаптирован под основную аудиторию</strong> — ваши пациенты — люди среднего и старшего возраста. Для них важно, чтобы всё было понятно: куда нажать, как записаться, как вернуться назад.</span></div>
+      <div class="list-item"><span class="num">10</span><span><strong>Возможности по дизайну</strong> — можно освежить визуальную часть сайта, сделать её более современной. Повышает доверие и конверсию.</span></div>
+    </div>
+    <div class="callout callout-blue" style="margin-top: 14px;">
+      <p>Это поверхностный взгляд. Полный аудит с детальными рекомендациями будет проведён после начала работы.<br>На сайте установлена Яндекс.Метрика (счётчик №22605190) — аналитика уже собирается.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: APPROACH -->
+<div class="slide slide-content" id="slide-4">
+  <div class="slide-header">
+    <div class="tag">Подход</div>
+    <h2>Что мы предлагаем</h2>
+    <p class="lead">Все направления запускаются параллельно с первого месяца. Подробности по каждому пункту — далее в презентации.</p>
+  </div>
+  <div class="slide-body">
+    <div class="cards cards-2">
+      <div class="card card-highlight">
+        <h3 style="font-size:19px;">Аудит и переработка сайта</h3>
+        <p style="font-size:16px !important;">Полный аудит, исправление критичных проблем, улучшение конверсии. Сайт должен продавать, а не просто информировать.</p>
+      </div>
+      <div class="card card-highlight">
+        <h3 style="font-size:19px;">Маркетинг</h3>
+        <p style="font-size:16px !important;">Анализ рынка и конкурентов, разработка акций и программ лояльности, контроль обращений.</p>
+      </div>
+      <div class="card card-highlight">
+        <h3 style="font-size:19px;">Яндекс.Директ</h3>
+        <p style="font-size:16px !important;">Сбор ключевых слов, подготовка и запуск первых рекламных кампаний. Бюджет тратим аккуратно — сначала тестируем, потом масштабируем.</p>
+      </div>
+      <div class="card card-highlight">
+        <h3 style="font-size:19px;">Аналитика</h3>
+        <p style="font-size:16px !important;">Начинаем отслеживать результаты с первого месяца. Корректируем стратегию, усиливаем то, что работает.</p>
+      </div>
+    </div>
+    <div class="callout callout-primary" style="margin-top: 18px;">
+      <p style="font-size:16px !important;">Далее — оптимизация и масштабирование: увеличиваем вложения только в те направления, которые приносят результат.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: WEBSITE -->
+<div class="slide slide-content" id="slide-5">
+  <div class="slide-header">
+    <div class="tag">Сайт</div>
+    <h2>Аудит и переработка сайта</h2>
+  </div>
+  <div class="slide-body">
+    <div style="background: linear-gradient(135deg, #E53E3E 0%, #C53030 100%); color: white; border-radius: 16px; padding: 22px 28px; margin-bottom: 20px; box-shadow: 0 4px 16px rgba(229, 62, 62, 0.25);">
+      <p style="font-size: 18px !important; font-weight: 700; color: white !important; margin: 0 !important; line-height: 1.5;">Сайт — ваш главный инструмент продаж. Прежде чем вкладывать деньги в рекламу, он должен превращать посетителей в пациентов.</p>
+    </div>
+    <div class="two-col">
+      <div class="col-section">
+        <h3>Что будет сделано</h3>
+        <div class="list-items">
+          <div class="list-item"><span class="check">&#10003;</span><span>Полный SEO-аудит: технический, контентный, поведенческий</span></div>
+          <div class="list-item"><span class="check">&#10003;</span><span>Доработка страницы специалистов — квалификации и описания врачей</span></div>
+          <div class="list-item"><span class="check">&#10003;</span><span>Переработка формы записи — удобное всплывающее окно вместо скролла</span></div>
+          <div class="list-item"><span class="check">&#10003;</span><span>Проработка акций — понятные формулировки, кнопки записи</span></div>
+          <div class="list-item"><span class="check">&#10003;</span><span>Добавление контента (страница «Термо и криотерапия» и др.)</span></div>
+          <div class="list-item"><span class="check">&#10003;</span><span>Создание раздела FAQ</span></div>
+        </div>
+      </div>
+      <div class="col-section">
+        <h3>Техническое SEO</h3>
+        <div class="list-items">
+          <div class="list-item"><span class="check">&#10003;</span><span>Исправление мета-тегов и заголовков</span></div>
+          <div class="list-item"><span class="check">&#10003;</span><span>Schema.org разметка для врачей</span></div>
+          <div class="list-item"><span class="check">&#10003;</span><span>Адаптация под основную аудиторию (средний и старший возраст)</span></div>
+          <div class="list-item"><span class="check">&#10003;</span><span>Доработка дизайна при необходимости</span></div>
+          <div class="list-item"><span class="check">&#10003;</span><span>Настройка целей в Яндекс.Метрике (счётчик №22605190)</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="callout callout-warm" style="margin-top: 16px;">
+      <p>Это задачи, которые видны уже сейчас. После полного аудита список задач расширится — станет понятно, что ещё нужно доработать для максимальной конверсии.</p>
+    </div>
+    <div class="important-block" style="margin-top: 12px;">
+      <p>Мы работаем с кодом сайта напрямую — не ждём очереди у сторонних подрядчиков. Правки вносятся быстро, без посредников.</p>
+    </div>
+    <div class="callout callout-primary" style="margin-top: 12px;">
+      <p><strong>Бонус:</strong> Создание раздела «Блог» на сайте + 2 первые экспертные статьи — в подарок. Далее ведение блога обсуждается отдельно.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: UX FOR OLDER AUDIENCE -->
+<div class="slide slide-content" id="slide-6">
+  <div class="slide-header">
+    <div class="tag">Удобство для пациентов</div>
+    <h2>Сайт должен быть понятен каждому пациенту</h2>
+  </div>
+  <div class="slide-body">
+    <div class="ux-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start;">
+      <div>
+        <p style="font-size:17px; margin-bottom: 16px;">Основная аудитория клиники — люди среднего и старшего возраста. Они не будут разбираться в сложной навигации и искать кнопку «Записаться» по всей странице.</p>
+        <p style="font-size:17px; margin-bottom: 20px;">Для них особенно важно:</p>
+        <div class="list-items">
+          <div class="list-item"><span class="check">&#10003;</span><span style="font-size:16px;">Все кнопки на своих местах, видны и понятны</span></div>
+          <div class="list-item"><span class="check">&#10003;</span><span style="font-size:16px;">Записаться можно в один клик — без поиска формы</span></div>
+          <div class="list-item"><span class="check">&#10003;</span><span style="font-size:16px;">Минимум лишних шагов от входа на сайт до записи на приём</span></div>
+          <div class="list-item"><span class="check">&#10003;</span><span style="font-size:16px;">Понятно, как вернуться назад, как перейти в другой раздел</span></div>
+          <div class="list-item"><span class="check">&#10003;</span><span style="font-size:16px;">Крупный текст, контрастные элементы, читаемые шрифты</span></div>
+          <div class="list-item"><span class="check">&#10003;</span><span style="font-size:16px;">Никаких запутанных меню и скрытых элементов</span></div>
+        </div>
+
+        <div class="callout callout-primary" style="margin-top: 18px;">
+          <p style="font-size:16px !important;"><strong>Тестирование на реальных пользователях:</strong> будем показывать сайт людям в возрасте и спрашивать — что удобно, что нет, где запутались. Их обратная связь покажет, что нужно исправить. Это самый надёжный способ сделать сайт по-настоящему удобным.</p>
+        </div>
+      </div>
+      <div>
+        <div class="screenshot-container">
+          <img src="Screenshot_2.png" alt="Текущий вид сайта" style="border-radius: 16px; width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7: YANDEX DIRECT -->
+<div class="slide slide-content" id="slide-7">
+  <div class="slide-header">
+    <div class="tag">Яндекс.Директ</div>
+    <h2>Контекстная реклама, которая приводит пациентов</h2>
+    <p class="lead">Подготовка и запуск — с первого месяца. Бюджет тратим аккуратно: сначала тестируем, потом масштабируем.</p>
+  </div>
+  <div class="slide-body">
+    <div class="two-col">
+      <div class="col-section">
+        <h3>Что входит в работу</h3>
+        <div class="list-items">
+          <div class="list-item"><span class="bullet"></span><span>Изучение рынка и трендов в сфере реабилитации</span></div>
+          <div class="list-item"><span class="bullet"></span><span>Анализ потребностей целевой аудитории</span></div>
+          <div class="list-item"><span class="bullet"></span><span>Исследование стратегий конкурентов</span></div>
+          <div class="list-item"><span class="bullet"></span><span>Подбор ключевых слов, минус-слов</span></div>
+          <div class="list-item"><span class="bullet"></span><span>Создание объявлений (текст, графика, видео)</span></div>
+          <div class="list-item"><span class="bullet"></span><span>Сегментация: география, возраст, интересы</span></div>
+          <div class="list-item"><span class="bullet"></span><span>Настройка целей в Яндекс.Метрике</span></div>
+        </div>
+      </div>
+      <div class="col-section">
+        <h3>Мониторинг и аналитика</h3>
+        <div class="list-items">
+          <div class="list-item"><span class="bullet"></span><span>Кликабельность (CTR)</span></div>
+          <div class="list-item"><span class="bullet"></span><span>Стоимость клика (CPC)</span></div>
+          <div class="list-item"><span class="bullet"></span><span>Конверсия: заявки, звонки, посещения</span></div>
+          <div class="list-item"><span class="bullet"></span><span>Обратная связь от отдела продаж</span></div>
+          <div class="list-item"><span class="bullet"></span><span>Ежемесячная отчётность</span></div>
+          <div class="list-item"><span class="bullet"></span><span>Рекомендации по оптимизации бюджета</span></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-size:17px;font-weight:700;color:var(--dark);margin:20px 0 10px;">Прогноз бюджета по вашим ключевым запросам (данные Яндекс.Директ, Москва)</h3>
+    <div class="screenshot-container">
+      <img src="Screenshot_1.png" alt="Прогноз бюджета Яндекс.Директ">
+      <p class="screenshot-caption">Пример прогноза по 10 ключевым запросам из вашей ниши — для понимания уровня ставок и конкуренции</p>
+    </div>
+    <p style="font-size:15px;margin-top:10px;">Это лишь часть запросов. При полноценной работе мы проработаем значительно больше ключевых слов и направлений.</p>
+    <div class="callout callout-warm" style="margin-top:10px;">
+      <p>Рекламный бюджет Яндекс.Директ оплачивается клиентом отдельно. Точная сумма определяется после аудита и зависит от количества направлений и желаемого объёма трафика.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 8: MARKETING -->
+<div class="slide slide-content" id="slide-8">
+  <div class="slide-header">
+    <div class="tag">Маркетинг</div>
+    <h2>Маркетинг: анализ, акции, контроль</h2>
+    <p class="lead">Параллельно с работой над сайтом и рекламой ведётся маркетинговая работа</p>
+  </div>
+  <div class="slide-body">
+    <div class="cards cards-2">
+      <div class="card">
+        <h3>Аналитика и стратегия</h3>
+        <p>Анализ рынка и конкурентов в сфере реабилитации и восстановления опорно-двигательного аппарата. Анализ ценообразования клиник-конкурентов и ваших клиник — поиск точек роста.</p>
+      </div>
+      <div class="card">
+        <h3>Лид-магниты</h3>
+        <p>Разработка материалов, которые мотивируют потенциального пациента оставить контакты или записаться на приём.</p>
+      </div>
+      <div class="card">
+        <h3>Акции и лояльность</h3>
+        <p>Разработка и внедрение акций и программ лояльности для привлечения и удержания пациентов.</p>
+      </div>
+      <div class="card">
+        <h3>Контроль обращений</h3>
+        <p>Контроль звонков и обращений — отслеживание конверсии в записи на приём. Взаимодействие с колл-центром — контроль качества обработки входящих обращений.</p>
+      </div>
+    </div>
+    <div class="callout callout-primary" style="margin-top: 14px;">
+      <p>Ежемесячная отчётность с аналитикой и рекомендациями по каждому направлению.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 9: BLOG -->
+<div class="slide slide-content" id="slide-9">
+  <div class="slide-header">
+    <div class="tag">Бонус</div>
+    <h2>Блог на сайте — дополнительный поток пациентов</h2>
+  </div>
+  <div class="slide-body">
+    <p>Мы постараемся создать на сайте раздел «Блог» и написать первые 2 статьи уже в первый месяц — техническая разработка раздела и эти статьи идут в подарок. Если основные задачи (переработка сайта, настройка Метрики, маркетинг) займут больше времени, блог может сдвинуться на второй месяц — мы не будем делать его в ущерб первоочередным задачам.</p>
+
+    <div class="callout callout-primary" style="margin: 16px 0;">
+      <p><strong>Как это работает:</strong> Человек вводит в Яндексе «боль в колене при ходьбе причины» → находит вашу статью → читает → видит, что клиника Бубновского лечит именно это → записывается на приём. Каждая статья работает месяцами и годами без дополнительных вложений.</p>
+    </div>
+
+    <div class="list-items">
+      <div class="list-item"><span class="check">&#10003;</span><span>Сбор семантического ядра: какие запросы вводят люди по вашим направлениям</span></div>
+      <div class="list-item"><span class="check">&#10003;</span><span>В первый месяц — 2 статьи, далее от 4 в месяц (при увеличении бюджета — больше)</span></div>
+      <div class="list-item"><span class="check">&#10003;</span><span>Оптимизация каждой статьи под поисковые запросы</span></div>
+      <div class="list-item"><span class="check">&#10003;</span><span>Обязательная проверка материалов врачами вашей клиники</span></div>
+      <div class="list-item"><span class="check">&#10003;</span><span>Отслеживание результатов через Яндекс.Метрику и Вебмастер: какие статьи приносят визиты, по каким запросам приходят люди</span></div>
+      <div class="list-item"><span class="check">&#10003;</span><span>Мониторинг позиций сайта по ключевым запросам</span></div>
+    </div>
+
+    <p style="margin-top: 14px; font-size: 15px; color: var(--text-light);">Дальнейшее ведение блога обсуждается отдельно.</p>
+  </div>
+</div>
+
+<!-- SLIDE 10: GUARANTEES -->
+<div class="slide slide-content" id="slide-10">
+  <div class="slide-header">
+    <div class="tag">Важно</div>
+    <h2>Честно о результатах</h2>
+  </div>
+  <div class="slide-body">
+    <div class="guarantee-box">
+      <p>Мы не даём гарантий конкретных цифр по трафику, позициям или количеству заявок — и рекомендуем с осторожностью относиться к тем, кто такие гарантии даёт.</p>
+      <p>Продвижение в интернете зависит от множества факторов за пределами контроля любого подрядчика: алгоритмы поисковых систем меняются, конкуренты не стоят на месте, спрос подвержен сезонности, законодательство обновляется.</p>
+      <p>Предсказать точный результат невозможно — так же, как невозможно гарантировать, что конкретная рекламная кампания или статья «выстрелит» именно так, как запланировано.</p>
+    </div>
+
+    <h3 style="font-size:18px;font-weight:700;color:var(--dark);margin:16px 0 12px;">Что мы гарантируем:</h3>
+    <div class="cards cards-2">
+      <div class="card card-highlight">
+        <h3>Прозрачная отчётность</h3>
+        <p>Вы видите, что именно сделано и какие метрики меняются</p>
+      </div>
+      <div class="card card-highlight">
+        <h3>Честная обратная связь</h3>
+        <p>Если что-то не работает — мы скажем и скорректируем стратегию</p>
+      </div>
+      <div class="card card-highlight">
+        <h3>Системный подход</h3>
+        <p>Выстроенная стратегия с регулярным анализом, а не хаотичные действия</p>
+      </div>
+      <div class="card card-highlight">
+        <h3>Погружение в специфику</h3>
+        <p>Мы разбираемся в том, что продвигаем</p>
+      </div>
+    </div>
+
+    <div class="callout callout-warning" style="margin-top: 16px;">
+      <p>Те, кто обещает «100% результат» и «гарантированный поток клиентов», как правило, либо не понимают, как устроен маркетинг, либо сознательно вводят в заблуждение. Наш подход — делать максимум возможного, измерять результат и постоянно улучшать.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 11: PRICE -->
+<div class="slide slide-content" id="slide-11">
+  <div class="slide-header">
+    <div class="tag">Стоимость</div>
+    <h2>Стоимость наших услуг</h2>
+  </div>
+  <div class="slide-body">
+    <table class="price-table">
+      <thead>
+        <tr><th>Что входит</th><th></th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Аудит и переработка сайта (код, контент, SEO, UX, дизайн)</td><td>Включено</td></tr>
+        <tr><td>Яндекс.Директ (настройка, управление, оптимизация, отчётность)</td><td>Включено</td></tr>
+        <tr><td>Маркетинг (анализ рынка, конкуренты, акции, лояльность, контроль обращений)</td><td>Включено</td></tr>
+        <tr><td>Аналитика по всем каналам, ежемесячная отчётность</td><td>Включено</td></tr>
+        <tr><td>Создание раздела «Блог» + 2 первые статьи</td><td style="color: var(--primary);">Бонус</td></tr>
+        <tr class="total"><td><strong>Итого</strong></td><td><strong>450 000 руб./мес</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-size:17px;font-weight:700;color:var(--dark);margin:24px 0 12px;">Дополнительно оплачивается клиентом:</h3>
+    <div class="list-items">
+      <div class="list-item"><span class="bullet"></span><span><strong>Рекламный бюджет Яндекс.Директ</strong> — сумма определяется после аудита, зависит от количества направлений и желаемого объёма трафика</span></div>
+      <div class="list-item"><span class="bullet"></span><span><strong>UX-тестирование с реальными пользователями</strong> — проверка удобства сайта на людях среднего и старшего возраста (основная аудитория клиники)</span></div>
+    </div>
+
+    <h3 style="font-size:17px;font-weight:700;color:var(--dark);margin:24px 0 12px;">Как начинаем работу:</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Согласование</h4>
+        <p>Согласование условий сотрудничества</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Договор</h4>
+        <p>Заключение договора</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Доступы</h4>
+        <p>Панель сайта, Метрика, Вебмастер, данные по рекламе</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Аудит</h4>
+        <p>Первые результаты в течение первой недели</p>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <h4>Запуск</h4>
+        <p>Анализ рынка, конкурентов, подготовка Директа</p>
+      </div>
+    </div>
+
+    <div class="important-block" style="margin-top: 16px; text-align: center;">
+      <p>Мы готовы начать сразу после заключения договора.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav">
+  <button onclick="changeSlide(-1)">&#8592;</button>
+  <span class="counter"><span id="current">1</span> / <span id="total">11</span></span>
+  <button onclick="changeSlide(1)">&#8594;</button>
+</div>
+
+<script>
+let current = 1;
+const total = 11;
+
+function showSlide(n) {
+  document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+  document.getElementById('slide-' + n).classList.add('active');
+  document.getElementById('current').textContent = n;
+  current = n;
+}
+
+function changeSlide(dir) {
+  let next = current + dir;
+  if (next < 1) next = 1;
+  if (next > total) next = total;
+  showSlide(next);
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); changeSlide(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); changeSlide(-1); }
+});
+</script>
+</body>
+</html>
